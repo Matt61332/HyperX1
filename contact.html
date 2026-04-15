@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Fire Scientific | HyperX 1</title>
+<meta name="description" content="Request HyperX 1 information — datasheet, SDS, pricing, and technical consultation from Fire Scientific LLC." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#0A1930', dark: '#050D1C', light: '#142544' },
+          ember: { DEFAULT: '#FF5B1F', light: '#FF7A47', dark: '#E04500' },
+          mist: { DEFAULT: '#D9BFA3', light: '#E8D2BC', dark: '#C9A88A' },
+        },
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .flame-underline { position: relative; display: inline-block; }
+  .flame-underline::after {
+    content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 4px;
+    background: linear-gradient(90deg, #FF5B1F, #FF7A47); border-radius: 2px;
+  }
+</style>
+</head>
+<body class="text-white antialiased bg-navy-dark">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-navy/95 backdrop-blur-sm border-b border-navy-light">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-ember to-ember-dark flex items-center justify-center font-black text-white text-lg">F</div>
+      <div class="text-white font-bold text-lg tracking-tight">FIRE <span class="text-ember">SCIENTIFIC</span></div>
+    </a>
+    <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/80">
+      <a href="index.html#product" class="hover:text-ember transition">Product</a>
+      <a href="index.html#applications" class="hover:text-ember transition">Applications</a>
+      <a href="performance.html" class="hover:text-ember transition">Performance</a>
+      <a href="specifications.html" class="hover:text-ember transition">Specs</a>
+      <a href="safety.html" class="hover:text-ember transition">Safety</a>
+      <a href="compliance.html" class="hover:text-ember transition">Compliance</a>
+      <a href="contact.html" class="text-ember transition">Contact</a>
+    </div>
+    <a href="contact.html" class="bg-ember hover:bg-ember-dark text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition">Request Info</a>
+  </div>
+</nav>
+
+<!-- CONTACT -->
+<section class="pt-32 pb-24 bg-gradient-to-br from-navy to-navy-dark text-white min-h-screen">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Get in Touch</div>
+      <h1 class="text-4xl lg:text-5xl font-black mb-4">Request HyperX 1 Information</h1>
+      <p class="text-white/70 text-lg">Datasheet, SDS, pricing, and technical consultation — we respond within one business day.</p>
+    </div>
+    <form class="bg-navy-light/50 backdrop-blur border border-white/10 rounded-2xl p-8 lg:p-10 grid md:grid-cols-2 gap-5" onsubmit="event.preventDefault(); window.location.href='mailto:info@firescientific.com?subject=HyperX 1 Inquiry';">
+      <div>
+        <label class="block text-sm font-semibold text-white/80 mb-2">Full Name *</label>
+        <input type="text" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Jane Doe" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-white/80 mb-2">Company *</label>
+        <input type="text" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Acme Fire Services" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-white/80 mb-2">Email *</label>
+        <input type="email" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="jane@example.com" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-white/80 mb-2">Country *</label>
+        <input type="text" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="United States" />
+      </div>
+      <div class="md:col-span-2">
+        <label class="block text-sm font-semibold text-white/80 mb-2">Application / Use Case</label>
+        <select class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:border-ember focus:outline-none">
+          <option>Select an application…</option>
+          <option>Lithium-ion battery / EV</option>
+          <option>Class A — Solids</option>
+          <option>Class B — Liquids</option>
+          <option>Forest / Wildland</option>
+          <option>Solar / Energy infrastructure</option>
+          <option>Industrial (tunnels, offshore, data center)</option>
+          <option>Municipal fire service</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="md:col-span-2">
+        <label class="block text-sm font-semibold text-white/80 mb-2">Message</label>
+        <textarea rows="4" class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Tell us about your project, volume needs, or questions…"></textarea>
+      </div>
+      <div class="md:col-span-2">
+        <button type="submit" class="w-full bg-ember hover:bg-ember-dark text-white font-bold py-4 rounded-lg transition shadow-lg shadow-ember/30">Submit Request</button>
+        <p class="text-xs text-white/40 text-center mt-4">By submitting, you agree to be contacted by Fire Scientific regarding your inquiry.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="bg-navy-dark border-y border-white/5 py-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center text-white/40 text-xs uppercase tracking-widest font-semibold mb-6">Certified & Compliant</div>
+    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-white/70 font-bold text-sm">
+      <span>ICAO</span><span class="text-white/20">·</span>
+      <span>LastFire</span><span class="text-white/20">·</span>
+      <span>EN 3</span><span class="text-white/20">·</span>
+      <span>EN 1568</span><span class="text-white/20">·</span>
+      <span>REACH</span><span class="text-white/20">·</span>
+      <span>WGK 1</span><span class="text-white/20">·</span>
+      <span class="text-ember">PFAS-FREE</span>
+    </div>
+    <div class="text-center text-white/50 text-sm mt-6">Distributed in North America by <span class="text-white font-semibold">Fire Scientific LLC</span></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy-dark text-white/60 py-12 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-ember to-ember-dark flex items-center justify-center font-black text-white">F</div>
+          <div class="text-white font-bold text-lg">FIRE <span class="text-ember">SCIENTIFIC</span></div>
+        </div>
+        <p class="text-sm max-w-md">North American distributor of HyperX 1 — the next-generation, PFAS-free fire extinguishing agent engineered for modern fire risks.</p>
+      </div>
+      <div>
+        <div class="text-white font-bold text-sm uppercase tracking-wider mb-4">Product</div>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html#product" class="hover:text-ember">HyperX 1</a></li>
+          <li><a href="performance.html" class="hover:text-ember">Performance</a></li>
+          <li><a href="specifications.html" class="hover:text-ember">Specifications</a></li>
+          <li><a href="compliance.html" class="hover:text-ember">Compliance</a></li>
+          <li><a href="availability.html" class="hover:text-ember">Availability</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-white font-bold text-sm uppercase tracking-wider mb-4">Company</div>
+        <ul class="space-y-2 text-sm">
+          <li><a href="contact.html" class="hover:text-ember">Contact</a></li>
+          <li><a href="mailto:info@firescientific.com" class="hover:text-ember">info@firescientific.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs">
+      <div>© 2026 Fire Scientific LLC. All rights reserved.</div>
+      <div>HyperX 1 is manufactured in Germany. Distributed in North America by Fire Scientific LLC.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

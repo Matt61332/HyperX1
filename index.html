@@ -54,6 +54,13 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
   }
+  .usecase-slide { opacity: 0; transform: translateY(12px); transition: opacity 0.6s ease, transform 0.6s ease; position: absolute; inset: 0; pointer-events: none; }
+  .usecase-slide.is-active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; }
+  .usecase-dot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(255,255,255,0.25); transition: all 0.3s ease; }
+  .usecase-dot.is-active { background: #FF5B1F; width: 28px; }
+  .usecase-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; }
+  .usecase-bg.is-active { opacity: 1; }
+  .usecase-bg-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,13,28,0.78) 0%, rgba(5,13,28,0.88) 100%); }
 </style>
 </head>
 <body class="text-white antialiased bg-navy-dark">
@@ -68,13 +75,13 @@
     <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/80">
       <a href="#product" class="hover:text-ember transition">Product</a>
       <a href="#applications" class="hover:text-ember transition">Applications</a>
-      <a href="#performance" class="hover:text-ember transition">Performance</a>
-      <a href="#specs" class="hover:text-ember transition">Specs</a>
-      <a href="#safety" class="hover:text-ember transition">Safety</a>
-      <a href="#compliance" class="hover:text-ember transition">Compliance</a>
-      <a href="#contact" class="hover:text-ember transition">Contact</a>
+      <a href="performance.html" class="hover:text-ember transition">Performance</a>
+      <a href="specifications.html" class="hover:text-ember transition">Specs</a>
+      <a href="safety.html" class="hover:text-ember transition">Safety</a>
+      <a href="compliance.html" class="hover:text-ember transition">Compliance</a>
+      <a href="contact.html" class="hover:text-ember transition">Contact</a>
     </div>
-    <a href="#contact" class="bg-ember hover:bg-ember-dark text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition">Request Info</a>
+    <a href="contact.html" class="bg-ember hover:bg-ember-dark text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition">Request Info</a>
   </div>
 </nav>
 
@@ -96,7 +103,7 @@
       <p class="reveal reveal-delay-2 text-2xl lg:text-3xl font-light text-white/90 mb-4">The world's most advanced fire extinguishing agent.</p>
       <p class="reveal reveal-delay-2 text-lg text-white/70 mb-8 max-w-xl">PFAS-free. Sub-20-second knockdown. Proven on lithium batteries, EVs, forests, and industrial fires — all from a single agent.</p>
       <div class="reveal reveal-delay-3 flex flex-wrap gap-4 mb-10">
-        <a href="#contact" class="bg-ember hover:bg-ember-dark text-white px-8 py-4 rounded-lg font-semibold transition shadow-lg shadow-ember/30">Request Datasheet</a>
+        <a href="contact.html" class="bg-ember hover:bg-ember-dark text-white px-8 py-4 rounded-lg font-semibold transition shadow-lg shadow-ember/30">Request Datasheet</a>
         <a href="#product" class="border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition">Learn More</a>
       </div>
       <div class="reveal reveal-delay-4 grid grid-cols-3 gap-6 max-w-lg border-t border-white/10 pt-8">
@@ -117,31 +124,8 @@
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<section class="bg-navy-dark border-y border-white/5 py-8">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center text-white/40 text-xs uppercase tracking-widest font-semibold mb-6">Certified & Compliant</div>
-    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-white/70 font-bold text-sm">
-      <span>ICAO</span>
-      <span class="text-white/20">·</span>
-      <span>LastFire</span>
-      <span class="text-white/20">·</span>
-      <span>EN 3</span>
-      <span class="text-white/20">·</span>
-      <span>EN 1568</span>
-      <span class="text-white/20">·</span>
-      <span>REACH</span>
-      <span class="text-white/20">·</span>
-      <span>WGK 1</span>
-      <span class="text-white/20">·</span>
-      <span class="text-ember">PFAS-FREE</span>
-    </div>
-    <div class="text-center text-white/50 text-sm mt-6">Distributed in North America by <span class="text-white font-semibold">Fire Scientific LLC</span></div>
-  </div>
-</section>
-
 <!-- PRODUCT -->
-<section id="product" class="py-24 section-fade text-navy">
+<section id="product" class="py-24 section-fade text-navy" style="background-image: linear-gradient(180deg, rgba(232,210,188,0.6375) 0%, rgba(217,191,163,0.6375) 100%), url('diagram.avif'); background-size: cover; background-position: center;">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mb-16">
       <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">The Product</div>
@@ -178,337 +162,187 @@
         <p class="text-white/60 text-sm leading-relaxed">10 years in IBC standard, up to 20 years under optimal storage conditions.</p>
       </div>
     </div>
+    <div class="mt-14 text-center">
+      <a href="contact.html" class="inline-flex items-center gap-2 bg-ember hover:bg-ember-dark text-white px-8 py-4 rounded-lg font-semibold transition shadow-lg shadow-ember/30">
+        Request the Datasheet
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- APPLICATIONS -->
-<section id="applications" class="py-24 bg-navy text-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="max-w-3xl mb-16">
+<!-- APPLICATIONS CAROUSEL -->
+<section id="applications" class="py-24 text-white relative overflow-hidden bg-navy-dark">
+  <div class="usecase-bg is-active" style="background-image: url('carosell/wildfire.jpg');"></div>
+  <div class="usecase-bg" style="background-image: url('carosell/OilandGas.jpeg');"></div>
+  <div class="usecase-bg" style="background-image: url('carosell/airport.jpeg');"></div>
+  <div class="usecase-bg" style="background-image: url('carosell/urban.jpeg');"></div>
+  <div class="usecase-bg" style="background-image: url('carosell/ev.jpeg');"></div>
+  <div class="usecase-bg-overlay"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="max-w-3xl mb-12">
       <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Applications</div>
       <h2 class="text-4xl lg:text-5xl font-black mb-6">One Agent. Every Fire.</h2>
-      <p class="text-lg text-white/70">HyperX 1 is the technical world market leader for lithium-ion battery fires, and it performs across the full spectrum of modern fire risks.</p>
+      <p class="text-lg text-white/80">From remote wildland fronts to dense urban cores — HyperX 1 performs across the full spectrum of modern fire risks.</p>
+      <a href="applications.html" class="inline-flex items-center gap-2 text-ember font-semibold text-sm mt-4 hover:text-ember-light transition">See all applications
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="bg-navy-light border border-white/10 rounded-xl p-6 hover:border-ember/50 transition">
-        <div class="flex items-start justify-between mb-3">
-          <h3 class="font-bold text-lg">Lithium-Ion Batteries</h3>
-          <span class="text-xs bg-ember text-white px-2 py-1 rounded font-bold">LEADER</span>
-        </div>
-        <p class="text-white/60 text-sm">E-scooters, e-bikes, EV packs, battery storage. Global technical market leader.</p>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-xl p-6 hover:border-ember/50 transition">
-        <h3 class="font-bold text-lg mb-3">Electric Vehicles</h3>
-        <p class="text-white/60 text-sm">Dosing up to 0.5%. Full EV fleet coverage.</p>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-xl p-6 hover:border-ember/50 transition">
-        <h3 class="font-bold text-lg mb-3">Class A — Solids</h3>
-        <p class="text-white/60 text-sm">Dosing 0.2% – 0.5%. Wood, paper, textiles, plastics.</p>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-xl p-6 hover:border-ember/50 transition">
-        <h3 class="font-bold text-lg mb-3">Class B — Liquids</h3>
-        <p class="text-white/60 text-sm">Dosing 1.0% – 3.0%. Hydrocarbons and fuel fires.</p>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-xl p-6 hover:border-ember/50 transition">
-        <h3 class="font-bold text-lg mb-3">Forest Fires</h3>
-        <p class="text-white/60 text-sm">Dosing 0.2%. Approved by HI Gelsenkirchen.</p>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-xl p-6 hover:border-ember/50 transition">
-        <h3 class="font-bold text-lg mb-3">Solar Installations</h3>
-        <p class="text-white/60 text-sm">Dosing 0.5%. PV arrays and energy infrastructure.</p>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-xl p-6 hover:border-ember/50 transition">
-        <h3 class="font-bold text-lg mb-3">Class F — Fats</h3>
-        <p class="text-white/60 text-sm">Special extinguisher exceeding the 2.7 m flame norm.</p>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-xl p-6 hover:border-ember/50 transition">
-        <h3 class="font-bold text-lg mb-3">Industrial Environments</h3>
-        <p class="text-white/60 text-sm">Tunnels, offshore, data centers, aircraft — all covered.</p>
-      </div>
-      <div class="bg-navy-light border border-ember/40 rounded-xl p-6">
-        <div class="flex items-start justify-between mb-3">
-          <h3 class="font-bold text-lg">Alcohols</h3>
-          <span class="text-xs bg-ember/20 text-ember px-2 py-1 rounded font-bold">SOON</span>
-        </div>
-        <p class="text-white/60 text-sm">New product for methanol, ethanol, and polar solvents — available soon.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PERFORMANCE -->
-<section id="performance" class="py-24 bg-mist-light text-navy">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
-      <div>
-        <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Performance</div>
-        <h2 class="text-4xl lg:text-5xl font-black flame-underline mb-8">Unmatched Efficiency.</h2>
-        <p class="text-lg text-navy/70 leading-relaxed mt-8 mb-6">HyperX 1 delivers extreme reaction speed with minimal agent consumption. A single agent replaces multiple legacy products while outperforming them in every category.</p>
-        <div class="space-y-4">
-          <div class="flex items-start gap-4 p-5 bg-navy-light border border-white/10 rounded-xl text-white">
-            <div class="text-4xl font-black text-ember">&lt;20s</div>
-            <div>
-              <div class="font-bold">Reaction Speed</div>
-              <div class="text-sm text-white/60">Extreme knockdown time vs. conventional foams.</div>
+    <div class="relative">
+      <div id="usecase-track" class="relative min-h-[320px] md:min-h-[280px]">
+        <div class="usecase-slide is-active">
+          <div class="grid md:grid-cols-5 gap-8 items-center bg-navy-dark/70 backdrop-blur-md border border-white/10 rounded-2xl p-8 lg:p-12">
+            <div class="md:col-span-1 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-ember/15 border border-ember/40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-ember" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2c1 3 4 5 4 9a4 4 0 11-8 0c0-2 1-3 2-4 0 2 1 3 2 3s0-3 0-8zM6 20h12"/></svg>
+              </div>
             </div>
-          </div>
-          <div class="flex items-start gap-4 p-5 bg-navy-light border border-white/10 rounded-xl text-white">
-            <div class="text-2xl font-black text-ember">0.2–3.0%</div>
-            <div>
-              <div class="font-bold">Dosing Range</div>
-              <div class="text-sm text-white/60">Lowest concentrations in the industry for equivalent extinguishing volume.</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-4 p-5 bg-navy-light border border-white/10 rounded-xl text-white">
-            <div class="text-xl font-black text-ember">#1</div>
-            <div>
-              <div class="font-bold">Cooling Effect</div>
-              <div class="text-sm text-white/60">Best cooling effect in the market — measured and verified.</div>
+            <div class="md:col-span-4">
+              <div class="text-ember font-bold uppercase text-xs tracking-wider mb-2">Wildfire</div>
+              <h3 class="text-3xl font-black mb-3">Wildland & Forest</h3>
+              <p class="text-white/70 mb-4">HI Gelsenkirchen-approved at just 0.2% dosing. Rapid cooling, deep penetration into fuel loads, and full biodegradability make HyperX 1 ideal for aerial drops and ground attack.</p>
+              <ul class="grid sm:grid-cols-2 gap-2 text-sm text-white/60">
+                <li class="flex gap-2"><span class="text-ember">✓</span> 0.2% dosing — lowest volume logistics</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Biodegradable, safe for waterways</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Extended cooling prevents reflash</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Compatible with aerial tankers</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-2xl p-8 text-white">
-        <h3 class="font-bold text-xl mb-6">Dosing by Fire Class</h3>
-        <div class="space-y-5">
-          <div>
-            <div class="flex justify-between text-sm font-semibold mb-2"><span>Class A — Solids</span><span class="text-ember">0.2 – 0.5%</span></div>
-            <div class="h-2 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-ember rounded-full" style="width:15%"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between text-sm font-semibold mb-2"><span>Forest Fires</span><span class="text-ember">0.2%</span></div>
-            <div class="h-2 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-ember rounded-full" style="width:7%"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between text-sm font-semibold mb-2"><span>Electric Vehicles</span><span class="text-ember">≤ 0.5%</span></div>
-            <div class="h-2 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-ember rounded-full" style="width:17%"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between text-sm font-semibold mb-2"><span>Solar</span><span class="text-ember">0.5%</span></div>
-            <div class="h-2 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-ember rounded-full" style="width:17%"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between text-sm font-semibold mb-2"><span>Class B — Liquids</span><span class="text-ember">1.0 – 3.0%</span></div>
-            <div class="h-2 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-ember rounded-full" style="width:100%"></div></div>
+
+        <div class="usecase-slide">
+          <div class="grid md:grid-cols-5 gap-8 items-center bg-navy-dark/70 backdrop-blur-md border border-white/10 rounded-2xl p-8 lg:p-12">
+            <div class="md:col-span-1 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-ember/15 border border-ember/40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-ember" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6"/></svg>
+              </div>
+            </div>
+            <div class="md:col-span-4">
+              <div class="text-ember font-bold uppercase text-xs tracking-wider mb-2">Energy</div>
+              <h3 class="text-3xl font-black mb-3">Oil & Gas</h3>
+              <p class="text-white/70 mb-4">Engineered for Class B hydrocarbon fires at refineries, tank farms, offshore platforms, and pipeline facilities. LastFire-tested performance under the most demanding fuel-fire conditions.</p>
+              <ul class="grid sm:grid-cols-2 gap-2 text-sm text-white/60">
+                <li class="flex gap-2"><span class="text-ember">✓</span> LastFire certified</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> 1.0–3.0% dosing for liquids</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Vapor suppression & burnback resistance</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Drop-in replacement for legacy AFFF</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <p class="text-xs text-white/50 mt-6">Lower dosing = more fire covered per liter of agent.</p>
+
+        <div class="usecase-slide">
+          <div class="grid md:grid-cols-5 gap-8 items-center bg-navy-dark/70 backdrop-blur-md border border-white/10 rounded-2xl p-8 lg:p-12">
+            <div class="md:col-span-1 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-ember/15 border border-ember/40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-ember" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2 16l20-6-9-2-3-5-2 5-6 2 2 3z"/></svg>
+              </div>
+            </div>
+            <div class="md:col-span-4">
+              <div class="text-ember font-bold uppercase text-xs tracking-wider mb-2">Aviation</div>
+              <h3 class="text-3xl font-black mb-3">Airports & ARFF</h3>
+              <p class="text-white/70 mb-4">ICAO-certified performance for Aircraft Rescue and Fire Fighting. Compatible with existing ARFF vehicles and hydrant systems — no retrofit required.</p>
+              <ul class="grid sm:grid-cols-2 gap-2 text-sm text-white/60">
+                <li class="flex gap-2"><span class="text-ember">✓</span> ICAO Level B &amp; C certified</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> ARFF vehicle compatible</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Sub-20 second knockdown</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> PFAS-free runway &amp; hangar deployment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="usecase-slide">
+          <div class="grid md:grid-cols-5 gap-8 items-center bg-navy-dark/70 backdrop-blur-md border border-white/10 rounded-2xl p-8 lg:p-12">
+            <div class="md:col-span-1 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-ember/15 border border-ember/40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-ember" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg>
+              </div>
+            </div>
+            <div class="md:col-span-4">
+              <div class="text-ember font-bold uppercase text-xs tracking-wider mb-2">Municipal</div>
+              <h3 class="text-3xl font-black mb-3">Urban & Structural</h3>
+              <p class="text-white/70 mb-4">The versatile choice for municipal fire services facing mixed-risk urban environments — from high-rises and parking garages to tunnels and transit systems.</p>
+              <ul class="grid sm:grid-cols-2 gap-2 text-sm text-white/60">
+                <li class="flex gap-2"><span class="text-ember">✓</span> Class A, B, F single-agent coverage</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Works with existing sprinkler infrastructure</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> WGK 1 — safe for dense populations</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Reduces apparatus load vs. multi-agent fleets</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="usecase-slide">
+          <div class="grid md:grid-cols-5 gap-8 items-center bg-navy-dark/70 backdrop-blur-md border border-white/10 rounded-2xl p-8 lg:p-12">
+            <div class="md:col-span-1 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-ember/15 border border-ember/40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-ember" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 4h10l-1 4h-8zM6 8h12v12H6zM10 12h4M10 16h4"/></svg>
+              </div>
+            </div>
+            <div class="md:col-span-4">
+              <div class="text-ember font-bold uppercase text-xs tracking-wider mb-2">Battery &amp; EV</div>
+              <h3 class="text-3xl font-black mb-3">Lithium-Ion &amp; EVs</h3>
+              <p class="text-white/70 mb-4">HyperX 1 is the technical world market leader for lithium-ion battery fires — stopping thermal runaway, cooling cells rapidly, and preventing reignition in BESS, EVs, and consumer electronics.</p>
+              <ul class="grid sm:grid-cols-2 gap-2 text-sm text-white/60">
+                <li class="flex gap-2"><span class="text-ember">✓</span> Stops thermal runaway propagation</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Massive cooling effect per liter</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Proven on BESS, EVs &amp; packs</li>
+                <li class="flex gap-2"><span class="text-ember">✓</span> Reignition prevention</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between mt-8">
+        <button id="usecase-prev" aria-label="Previous use case" class="w-11 h-11 rounded-full border border-white/20 hover:border-ember hover:bg-ember/10 flex items-center justify-center transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <div id="usecase-dots" class="flex items-center gap-2">
+          <button class="usecase-dot is-active" data-index="0" aria-label="Wildfire"></button>
+          <button class="usecase-dot" data-index="1" aria-label="Oil & Gas"></button>
+          <button class="usecase-dot" data-index="2" aria-label="Airports"></button>
+          <button class="usecase-dot" data-index="3" aria-label="Urban"></button>
+          <button class="usecase-dot" data-index="4" aria-label="Lithium-Ion"></button>
+        </div>
+        <button id="usecase-next" aria-label="Next use case" class="w-11 h-11 rounded-full border border-white/20 hover:border-ember hover:bg-ember/10 flex items-center justify-center transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="mt-12 text-center">
+        <a href="contact.html" class="inline-flex items-center gap-2 bg-ember hover:bg-ember-dark text-white px-8 py-4 rounded-lg font-semibold transition shadow-lg shadow-ember/30">
+          Discuss Your Application
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SPECS -->
-<section id="specs" class="py-24 bg-mist text-navy">
+
+<!-- TRUST BAR -->
+<section class="bg-navy-dark border-y border-white/5 py-8">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="max-w-3xl mb-12">
-      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Technical</div>
-      <h2 class="text-4xl lg:text-5xl font-black flame-underline mb-8">Specifications</h2>
+    <div class="text-center text-white/40 text-xs uppercase tracking-widest font-semibold mb-6">Certified & Compliant</div>
+    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-white/70 font-bold text-sm">
+      <span>ICAO</span>
+      <span class="text-white/20">·</span>
+      <span>LastFire</span>
+      <span class="text-white/20">·</span>
+      <span>EN 3</span>
+      <span class="text-white/20">·</span>
+      <span>EN 1568</span>
+      <span class="text-white/20">·</span>
+      <span>REACH</span>
+      <span class="text-white/20">·</span>
+      <span>WGK 1</span>
+      <span class="text-white/20">·</span>
+      <span class="text-ember">PFAS-FREE</span>
     </div>
-    <div class="bg-navy-light rounded-2xl border border-white/10 overflow-hidden">
-      <table class="w-full">
-        <tbody class="divide-y divide-white/5">
-          <tr class="hover:bg-white/5">
-            <td class="px-6 py-5 font-semibold text-white w-1/3">Agent Type</td>
-            <td class="px-6 py-5 text-white/70">Wetting agent / foam hybrid</td>
-          </tr>
-          <tr class="hover:bg-white/5">
-            <td class="px-6 py-5 font-semibold text-white">Dosing Ratio</td>
-            <td class="px-6 py-5 text-white/70">0.2% – 3.0% (application dependent)</td>
-          </tr>
-          <tr class="hover:bg-white/5">
-            <td class="px-6 py-5 font-semibold text-white">Reaction Time</td>
-            <td class="px-6 py-5 text-white/70">Under 20 seconds</td>
-          </tr>
-          <tr class="hover:bg-white/5">
-            <td class="px-6 py-5 font-semibold text-white">Shelf Life</td>
-            <td class="px-6 py-5 text-white/70">10 years in IBC, up to 20 years optimal</td>
-          </tr>
-          <tr class="hover:bg-white/5">
-            <td class="px-6 py-5 font-semibold text-white">System Compatibility</td>
-            <td class="px-6 py-5 text-white/70">All — sprinklers, ARFF vehicles, fixed & portable systems</td>
-          </tr>
-          <tr class="hover:bg-white/5">
-            <td class="px-6 py-5 font-semibold text-white">Special Environments</td>
-            <td class="px-6 py-5 text-white/70">Tunnels, offshore, data centers, aircraft</td>
-          </tr>
-          <tr class="hover:bg-white/5">
-            <td class="px-6 py-5 font-semibold text-white">Water Hazard Class</td>
-            <td class="px-6 py-5 text-white/70">WGK 1 (lowest classification)</td>
-          </tr>
-          <tr class="hover:bg-white/5">
-            <td class="px-6 py-5 font-semibold text-white">Biodegradability</td>
-            <td class="px-6 py-5 text-white/70">Close to 100%</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- SAFETY -->
-<section id="safety" class="py-24 bg-mist-light text-navy">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="max-w-3xl mb-16">
-      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Safety & Environment</div>
-      <h2 class="text-4xl lg:text-5xl font-black flame-underline mb-8">Safe for People. Safe for the Planet.</h2>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="p-8 rounded-2xl bg-navy-light border border-emerald-500/30 text-white">
-        <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">Environmental</div>
-        <h3 class="font-bold text-xl mb-3">PFAS-Free</h3>
-        <p class="text-white/60 text-sm">100% REACH compliant. No PFOS, no PFOA, no cationic surfactants, no environmental burden.</p>
-      </div>
-      <div class="p-8 rounded-2xl bg-navy-light border border-emerald-500/30 text-white">
-        <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">Biodegradable</div>
-        <h3 class="font-bold text-xl mb-3">~100% Breakdown</h3>
-        <p class="text-white/60 text-sm">Near-complete biodegradability. Leaves no persistent residues in soil or water.</p>
-      </div>
-      <div class="p-8 rounded-2xl bg-navy-light border border-emerald-500/30 text-white">
-        <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">WGK 1</div>
-        <h3 class="font-bold text-xl mb-3">Lowest Hazard Class</h3>
-        <p class="text-white/60 text-sm">Classified WGK 1 — the lowest water hazard class in the German regulatory system.</p>
-      </div>
-      <div class="p-8 rounded-2xl bg-navy-light border border-sky-500/30 text-white">
-        <div class="text-sky-400 font-bold text-xs uppercase tracking-wider mb-2">Human Safety</div>
-        <h3 class="font-bold text-xl mb-3">No Toxicity Concerns</h3>
-        <p class="text-white/60 text-sm">Safe on skin contact and inhalation exposure. No special labeling required.</p>
-      </div>
-      <div class="p-8 rounded-2xl bg-navy-light border border-sky-500/30 text-white">
-        <div class="text-sky-400 font-bold text-xs uppercase tracking-wider mb-2">Asset Protection</div>
-        <h3 class="font-bold text-xl mb-3">Non-Corrosive</h3>
-        <p class="text-white/60 text-sm">No damage to protected assets. Minimal residue and cleanup costs.</p>
-      </div>
-      <div class="p-8 rounded-2xl bg-navy-light border border-sky-500/30 text-white">
-        <div class="text-sky-400 font-bold text-xs uppercase tracking-wider mb-2">Compliance</div>
-        <h3 class="font-bold text-xl mb-3">No Labeling Required</h3>
-        <p class="text-white/60 text-sm">Classification does not trigger hazard labeling requirements.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPLIANCE -->
-<section id="compliance" class="py-24 bg-navy text-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="max-w-3xl mb-16">
-      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Regulatory</div>
-      <h2 class="text-4xl lg:text-5xl font-black mb-6">Global Standards. Full Compliance.</h2>
-      <p class="text-lg text-white/70">HyperX 1 meets or exceeds the most rigorous fire suppression standards worldwide.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-navy-light border border-white/10 rounded-2xl p-8">
-        <div class="text-ember font-bold uppercase text-xs tracking-wider mb-4">Europe</div>
-        <h3 class="font-bold text-2xl mb-5">Fully Certified</h3>
-        <ul class="space-y-2 text-white/70 text-sm">
-          <li class="flex gap-2"><span class="text-ember">✓</span> EN 3 — Portable extinguishers</li>
-          <li class="flex gap-2"><span class="text-ember">✓</span> EN 1866 — Mobile extinguishers</li>
-          <li class="flex gap-2"><span class="text-ember">✓</span> EN 1568 — Foam concentrates</li>
-          <li class="flex gap-2"><span class="text-ember">✓</span> EN 2 — Fire classification</li>
-          <li class="flex gap-2"><span class="text-ember">✓</span> CE Marking</li>
-        </ul>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-2xl p-8">
-        <div class="text-ember font-bold uppercase text-xs tracking-wider mb-4">International</div>
-        <h3 class="font-bold text-2xl mb-5">Certified</h3>
-        <ul class="space-y-2 text-white/70 text-sm">
-          <li class="flex gap-2"><span class="text-ember">✓</span> ICAO</li>
-          <li class="flex gap-2"><span class="text-ember">✓</span> LastFire</li>
-          <li class="flex gap-2"><span class="text-ember">✓</span> REACH — 100% compliant</li>
-          <li class="flex gap-2"><span class="text-ember">✓</span> PFOS / PFOA ban compliance</li>
-          <li class="flex gap-2 text-white/50"><span class="text-ember/60">◐</span> ISO 9001 — Q1 2026</li>
-        </ul>
-      </div>
-      <div class="bg-navy-light border border-white/10 rounded-2xl p-8">
-        <div class="text-ember font-bold uppercase text-xs tracking-wider mb-4">Americas & Asia</div>
-        <h3 class="font-bold text-2xl mb-5">In Progress</h3>
-        <ul class="space-y-2 text-white/70 text-sm">
-          <li class="flex gap-2 text-white/50"><span class="text-ember/60">◐</span> UL (USA) — in progress</li>
-          <li class="flex gap-2 text-white/50"><span class="text-ember/60">◐</span> NFPA alignment</li>
-          <li class="flex gap-2 text-white/50"><span class="text-ember/60">◐</span> FM Approval roadmap</li>
-          <li class="flex gap-2 text-white/50"><span class="text-ember/60">◐</span> CCCF (China) — kicking off</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AVAILABILITY -->
-<section class="py-24 bg-mist-light text-navy">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="max-w-3xl mb-16">
-      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Global Availability</div>
-      <h2 class="text-4xl lg:text-5xl font-black flame-underline mb-8">Where to Find Us</h2>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="p-8 rounded-2xl border-2 border-ember bg-navy-light text-white">
-        <div class="text-ember font-bold uppercase text-xs tracking-wider mb-3">North America</div>
-        <h3 class="font-black text-2xl mb-3">Fire Scientific LLC</h3>
-        <p class="text-white/60 text-sm mb-4">Exclusive North American distribution. Full inventory, local support, and technical service.</p>
-        <a href="#contact" class="text-ember font-bold text-sm hover:text-ember-light">Contact →</a>
-      </div>
-      <div class="p-8 rounded-2xl bg-navy-light border border-white/10 text-white">
-        <div class="text-white/50 font-bold uppercase text-xs tracking-wider mb-3">Europe</div>
-        <h3 class="font-black text-2xl mb-3">Direct from Germany</h3>
-        <p class="text-white/60 text-sm">Manufactured in Germany with full European certification and distribution network.</p>
-      </div>
-      <div class="p-8 rounded-2xl bg-navy-light border border-white/10 text-white">
-        <div class="text-white/50 font-bold uppercase text-xs tracking-wider mb-3">Asia</div>
-        <h3 class="font-black text-2xl mb-3">Partner Network</h3>
-        <p class="text-white/60 text-sm">Regional partnerships active, with CCCF certification underway for China.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="py-24 bg-gradient-to-br from-navy to-navy-dark text-white">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Get in Touch</div>
-      <h2 class="text-4xl lg:text-5xl font-black mb-4">Request HyperX 1 Information</h2>
-      <p class="text-white/70 text-lg">Datasheet, SDS, pricing, and technical consultation — we respond within one business day.</p>
-    </div>
-    <form class="bg-navy-light/50 backdrop-blur border border-white/10 rounded-2xl p-8 lg:p-10 grid md:grid-cols-2 gap-5" onsubmit="event.preventDefault(); window.location.href='mailto:info@firescientific.com?subject=HyperX 1 Inquiry';">
-      <div>
-        <label class="block text-sm font-semibold text-white/80 mb-2">Full Name *</label>
-        <input type="text" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Jane Doe" />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold text-white/80 mb-2">Company *</label>
-        <input type="text" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Acme Fire Services" />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold text-white/80 mb-2">Email *</label>
-        <input type="email" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="jane@example.com" />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold text-white/80 mb-2">Country *</label>
-        <input type="text" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="United States" />
-      </div>
-      <div class="md:col-span-2">
-        <label class="block text-sm font-semibold text-white/80 mb-2">Application / Use Case</label>
-        <select class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:border-ember focus:outline-none">
-          <option>Select an application…</option>
-          <option>Lithium-ion battery / EV</option>
-          <option>Class A — Solids</option>
-          <option>Class B — Liquids</option>
-          <option>Forest / Wildland</option>
-          <option>Solar / Energy infrastructure</option>
-          <option>Industrial (tunnels, offshore, data center)</option>
-          <option>Municipal fire service</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="md:col-span-2">
-        <label class="block text-sm font-semibold text-white/80 mb-2">Message</label>
-        <textarea rows="4" class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Tell us about your project, volume needs, or questions…"></textarea>
-      </div>
-      <div class="md:col-span-2">
-        <button type="submit" class="w-full bg-ember hover:bg-ember-dark text-white font-bold py-4 rounded-lg transition shadow-lg shadow-ember/30">Submit Request</button>
-        <p class="text-xs text-white/40 text-center mt-4">By submitting, you agree to be contacted by Fire Scientific regarding your inquiry.</p>
-      </div>
-    </form>
+    <div class="text-center text-white/50 text-sm mt-6">Distributed in North America by <span class="text-white font-semibold">Fire Scientific LLC</span></div>
   </div>
 </section>
 
@@ -527,15 +361,16 @@
         <div class="text-white font-bold text-sm uppercase tracking-wider mb-4">Product</div>
         <ul class="space-y-2 text-sm">
           <li><a href="#product" class="hover:text-ember">HyperX 1</a></li>
-          <li><a href="#applications" class="hover:text-ember">Applications</a></li>
-          <li><a href="#specs" class="hover:text-ember">Specifications</a></li>
-          <li><a href="#compliance" class="hover:text-ember">Compliance</a></li>
+          <li><a href="performance.html" class="hover:text-ember">Performance</a></li>
+          <li><a href="specifications.html" class="hover:text-ember">Specifications</a></li>
+          <li><a href="compliance.html" class="hover:text-ember">Compliance</a></li>
+          <li><a href="availability.html" class="hover:text-ember">Availability</a></li>
         </ul>
       </div>
       <div>
         <div class="text-white font-bold text-sm uppercase tracking-wider mb-4">Company</div>
         <ul class="space-y-2 text-sm">
-          <li><a href="#contact" class="hover:text-ember">Contact</a></li>
+          <li><a href="contact.html" class="hover:text-ember">Contact</a></li>
           <li><a href="mailto:info@firescientific.com" class="hover:text-ember">info@firescientific.com</a></li>
         </ul>
       </div>
@@ -570,6 +405,23 @@
     document.querySelectorAll('section:not(#top).reveal').forEach(function (s) {
       io.observe(s);
     });
+
+    var slides = document.querySelectorAll('.usecase-slide');
+    var dots = document.querySelectorAll('.usecase-dot');
+    var bgs = document.querySelectorAll('.usecase-bg');
+    var current = 0;
+    var timer;
+    function go(i) {
+      current = (i + slides.length) % slides.length;
+      slides.forEach(function (s, idx) { s.classList.toggle('is-active', idx === current); });
+      dots.forEach(function (d, idx) { d.classList.toggle('is-active', idx === current); });
+      bgs.forEach(function (b, idx) { b.classList.toggle('is-active', idx === current); });
+    }
+    function reset() { clearInterval(timer); timer = setInterval(function () { go(current + 1); }, 6000); }
+    document.getElementById('usecase-prev').addEventListener('click', function () { go(current - 1); reset(); });
+    document.getElementById('usecase-next').addEventListener('click', function () { go(current + 1); reset(); });
+    dots.forEach(function (d) { d.addEventListener('click', function () { go(parseInt(d.dataset.index, 10)); reset(); }); });
+    if (slides.length) reset();
   })();
 </script>
 
