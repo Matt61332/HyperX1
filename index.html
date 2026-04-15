@@ -5,22 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Fire Scientific — HyperX 1 | Advanced Fire Extinguishing Agent</title>
 <meta name="description" content="HyperX 1 by Fire Scientific — PFAS-free, ultra-fast fire suppression agent. Proven on lithium batteries, EVs, forests, solar, Class A/B fires. ICAO & LastFire certified." />
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          navy: { DEFAULT: '#0A1930', dark: '#050D1C', light: '#142544' },
-          ember: { DEFAULT: '#FF5B1F', light: '#FF7A47', dark: '#E04500' },
-          mist: { DEFAULT: '#D9BFA3', light: '#E8D2BC', dark: '#C9A88A' },
-        },
-        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-      }
-    }
-  }
-</script>
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; }
@@ -69,8 +55,7 @@
 <nav class="fixed top-0 w-full z-50 bg-navy/95 backdrop-blur-sm border-b border-navy-light">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="#top" class="flex items-center gap-2">
-      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-ember to-ember-dark flex items-center justify-center font-black text-white text-lg">F</div>
-      <div class="text-white font-bold text-lg tracking-tight">FIRE <span class="text-ember">SCIENTIFIC</span></div>
+      <img src="logo.png" alt="Fire Scientific" class="h-20 w-auto">
     </a>
     <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/80">
       <a href="#product" class="hover:text-ember transition">Product</a>
@@ -352,8 +337,7 @@
     <div class="grid md:grid-cols-4 gap-8 mb-10">
       <div class="md:col-span-2">
         <div class="flex items-center gap-2 mb-4">
-          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-ember to-ember-dark flex items-center justify-center font-black text-white">F</div>
-          <div class="text-white font-bold text-lg">FIRE <span class="text-ember">SCIENTIFIC</span></div>
+          <img src="logo.png" alt="Fire Scientific" class="h-20 w-auto">
         </div>
         <p class="text-sm max-w-md">North American distributor of HyperX 1 — the next-generation, PFAS-free fire extinguishing agent engineered for modern fire risks.</p>
       </div>

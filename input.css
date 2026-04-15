@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A1930;
+  --color-navy-dark: #050D1C;
+  --color-navy-light: #142544;
+
+  --color-ember: #FF5B1F;
+  --color-ember-light: #FF7A47;
+  --color-ember-dark: #E04500;
+
+  --color-mist: #D9BFA3;
+  --color-mist-light: #E8D2BC;
+  --color-mist-dark: #C9A88A;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
