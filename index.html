@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="tailwind.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 120px; }
   body { font-family: 'Inter', sans-serif; }
   .hero-bg { position: relative; overflow: hidden; background: #050D1C; }
   .hero-bg .hero-video {
@@ -112,10 +112,18 @@
 <!-- PRODUCT -->
 <section id="product" class="py-24 section-fade text-navy" style="background-image: linear-gradient(180deg, rgba(232,210,188,0.6375) 0%, rgba(217,191,163,0.6375) 100%), url('diagram.avif'); background-size: cover; background-position: center;">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="max-w-3xl mb-16">
-      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">The Product</div>
-      <h2 class="text-4xl lg:text-5xl font-black flame-underline mb-8">What is HyperX 1?</h2>
-      <p class="text-lg text-navy/70 leading-relaxed mt-8">HyperX 1 is a next-generation wetting-agent foam hybrid engineered for the broadest application range of any extinguishing agent on the market. Manufactured in Germany to exacting European standards and distributed in North America by Fire Scientific LLC, HyperX 1 delivers the fastest cooling effect in the industry — without PFAS, without compromise.</p>
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-10 mb-16">
+      <div class="max-w-3xl">
+        <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">The Product</div>
+        <h2 class="text-4xl lg:text-5xl font-black flame-underline mb-8">What is HyperX 1?</h2>
+        <p class="text-lg text-navy/70 leading-relaxed mt-8">HyperX 1 is a next-generation wetting-agent foam hybrid engineered for the broadest application range of any extinguishing agent on the market. Manufactured in Germany to exacting European standards and distributed in North America by Fire Scientific LLC, HyperX 1 delivers the fastest cooling effect in the industry — without PFAS, without compromise.</p>
+      </div>
+      <div class="shrink-0 sm:ml-auto">
+        <a href="contact.html" class="inline-flex items-center gap-2 bg-ember hover:bg-ember-dark text-white px-8 py-4 rounded-lg font-semibold transition shadow-lg shadow-ember/30">
+          Request the Datasheet
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="bg-navy-light rounded-2xl p-8 border border-white/10 card-hover text-white">
@@ -146,12 +154,6 @@
         <h3 class="font-bold text-xl mb-2">20-Year Shelf Life</h3>
         <p class="text-white/60 text-sm leading-relaxed">10 years in IBC standard, up to 20 years under optimal storage conditions.</p>
       </div>
-    </div>
-    <div class="mt-14 text-center">
-      <a href="contact.html" class="inline-flex items-center gap-2 bg-ember hover:bg-ember-dark text-white px-8 py-4 rounded-lg font-semibold transition shadow-lg shadow-ember/30">
-        Request the Datasheet
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-      </a>
     </div>
   </div>
 </section>
