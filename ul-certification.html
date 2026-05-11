@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UL Certification 2027 — Fire Scientific | HyperX 1</title>
+<meta name="description" content="HyperX 1 UL certification live countdown. Target completion January 1, 2027 — the formal U.S. approval milestone for PFAS-free fire suppression." />
+<link rel="stylesheet" href="tailwind.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+  body { font-family: 'Inter', sans-serif; }
+  .flame-underline { position: relative; display: inline-block; }
+  .flame-underline::after {
+    content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 4px;
+    background: linear-gradient(90deg, #FF5B1F, #FF7A47); border-radius: 2px;
+  }
+  .countdown-hero {
+    background:
+      linear-gradient(180deg, rgba(5,13,28,0.85) 0%, rgba(5,13,28,0.95) 100%),
+      radial-gradient(circle at 20% 30%, rgba(255,91,31,0.18) 0%, transparent 55%),
+      radial-gradient(circle at 80% 70%, rgba(255,91,31,0.12) 0%, transparent 55%),
+      #050D1C;
+  }
+  .count-tile {
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .count-num {
+    font-variant-numeric: tabular-nums;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FF7A47 150%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .timeline-line { background: linear-gradient(180deg, rgba(255,91,31,0.6), rgba(255,91,31,0.05)); }
+  .timeline-dot-done { background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,0.15); }
+  .timeline-dot-active { background: #FF5B1F; box-shadow: 0 0 0 4px rgba(255,91,31,0.2); animation: pulse-ember 2s ease-in-out infinite; }
+  .timeline-dot-future { background: rgba(255,255,255,0.25); }
+  @keyframes pulse-ember {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(255,91,31,0.2); }
+    50% { box-shadow: 0 0 0 10px rgba(255,91,31,0); }
+  }
+  .progress-track { background: rgba(255,255,255,0.08); }
+  .progress-fill { background: linear-gradient(90deg, #FF5B1F, #FF7A47); transition: width 1s ease; }
+</style>
+</head>
+<body class="text-white antialiased bg-navy-dark">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-navy/95 backdrop-blur-sm border-b border-navy-light">
+  <div class="mx-auto px-8 lg:px-12 py-4 flex items-center justify-between gap-8">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="logo.png" alt="Fire Scientific" class="h-20 w-auto">
+    </a>
+    <div class="hidden lg:flex items-center gap-10 text-xl font-medium text-white/80">
+      <a href="index.html#top" class="hover:text-ember transition">Product</a>
+      <a href="performance.html" class="hover:text-ember transition">Performance</a>
+      <a href="specifications.html" class="hover:text-ember transition">Specs</a>
+      <a href="safety.html" class="hover:text-ember transition">Safety</a>
+      <a href="compliance.html" class="hover:text-ember transition">Compliance</a>
+      <a href="why-hyperx1.html" class="hover:text-ember transition">FAQ</a>
+    </div>
+    <a href="contact.html" class="bg-ember hover:bg-ember-dark text-white px-5 py-2.5 rounded-lg font-semibold text-xl transition">Request Info</a>
+  </div>
+</nav>
+
+<!-- COUNTDOWN HERO -->
+<section class="pt-32 pb-20 countdown-hero">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-12">
+      <div class="inline-flex items-center gap-2 bg-ember/15 border border-ember/40 text-ember px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+        <span class="w-2 h-2 bg-ember rounded-full animate-pulse"></span>
+        UL Certification — In Progress
+      </div>
+      <h1 class="text-4xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6">Countdown to <span class="text-ember">UL Certification</span></h1>
+      <p class="text-xl text-white/80 leading-relaxed">HyperX 1 is completing Underwriters Laboratories certification — the formal U.S. approval milestone that unlocks nationwide AHJ acceptance, NFPA alignment, and large-scale procurement.</p>
+      <p class="text-lg text-white/60 mt-4"><span class="text-ember font-semibold">Target completion:</span> January 1, 2027</p>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
+      <div class="count-tile rounded-2xl p-6 text-center">
+        <div id="cd-days" class="count-num text-5xl lg:text-6xl font-black tracking-tight">---</div>
+        <div class="text-xs uppercase tracking-widest text-white/50 mt-2 font-semibold">Days</div>
+      </div>
+      <div class="count-tile rounded-2xl p-6 text-center">
+        <div id="cd-hours" class="count-num text-5xl lg:text-6xl font-black tracking-tight">--</div>
+        <div class="text-xs uppercase tracking-widest text-white/50 mt-2 font-semibold">Hours</div>
+      </div>
+      <div class="count-tile rounded-2xl p-6 text-center">
+        <div id="cd-mins" class="count-num text-5xl lg:text-6xl font-black tracking-tight">--</div>
+        <div class="text-xs uppercase tracking-widest text-white/50 mt-2 font-semibold">Minutes</div>
+      </div>
+      <div class="count-tile rounded-2xl p-6 text-center">
+        <div id="cd-secs" class="count-num text-5xl lg:text-6xl font-black tracking-tight">--</div>
+        <div class="text-xs uppercase tracking-widest text-white/50 mt-2 font-semibold">Seconds</div>
+      </div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="mt-10 max-w-3xl">
+      <div class="flex justify-between text-xs text-white/60 uppercase tracking-wider font-semibold mb-3">
+        <span>Certification Progress</span>
+        <span id="cd-progress-label">—</span>
+      </div>
+      <div class="progress-track h-2 rounded-full overflow-hidden">
+        <div id="cd-progress-fill" class="progress-fill h-full rounded-full" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div id="cd-complete" class="hidden mt-10 bg-ember/10 border border-ember/40 rounded-2xl p-6 max-w-3xl">
+      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-2">Milestone Reached</div>
+      <div class="text-2xl font-black">HyperX 1 is UL Certified.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY UL MATTERS -->
+<section class="py-24 bg-navy">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-14">
+      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Why This Matters</div>
+      <h2 class="text-4xl lg:text-5xl font-black flame-underline mb-8">UL Certification Unlocks the U.S. Market.</h2>
+      <p class="text-lg text-white/70 mt-8">UL certification is the single most important regulatory gateway for fire suppression agents in the United States. It governs AHJ acceptance, insurance underwriting, federal procurement, and NFPA system compliance.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-navy-dark border border-white/10 rounded-2xl p-7">
+        <div class="w-12 h-12 rounded-lg bg-ember/15 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-ember" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="font-bold text-xl mb-2">AHJ Acceptance</h3>
+        <p class="text-white/60 text-sm leading-relaxed">Fire marshals and local code officials require UL-listed agents for fixed systems, ARFF operations, and high-hazard occupancies.</p>
+      </div>
+      <div class="bg-navy-dark border border-white/10 rounded-2xl p-7">
+        <div class="w-12 h-12 rounded-lg bg-ember/15 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-ember" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        </div>
+        <h3 class="font-bold text-xl mb-2">NFPA Compliance</h3>
+        <p class="text-white/60 text-sm leading-relaxed">UL listing is the backbone of NFPA 11, NFPA 25, and NFPA 2001 compliance — the documents your insurer audits against.</p>
+      </div>
+      <div class="bg-navy-dark border border-white/10 rounded-2xl p-7">
+        <div class="w-12 h-12 rounded-lg bg-ember/15 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-ember" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-bold text-xl mb-2">Federal &amp; Municipal Procurement</h3>
+        <p class="text-white/60 text-sm leading-relaxed">Most federal RFPs, DoD replacement programs, and large municipal contracts require UL listing as a threshold criterion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="py-24 bg-navy-dark">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="mb-14">
+      <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Roadmap</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-6">Certification Timeline</h2>
+      <p class="text-lg text-white/70">Every milestone from partnership kickoff through UL completion.</p>
+    </div>
+
+    <div class="relative pl-8">
+      <div class="timeline-line absolute left-3 top-2 bottom-2 w-0.5"></div>
+
+      <div class="relative mb-10">
+        <div class="timeline-dot-done absolute -left-8 top-1.5 w-4 h-4 rounded-full"></div>
+        <div class="bg-navy-light border border-white/10 rounded-xl p-6">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-green-400">Complete</span>
+            <span class="text-xs text-white/50">October 2025</span>
+          </div>
+          <h3 class="text-xl font-black mb-1">U.S. Distribution Partnership Signed</h3>
+          <p class="text-white/60 text-sm">Fire Scientific LLC selected as exclusive North American distributor for HyperX 1.</p>
+        </div>
+      </div>
+
+      <div class="relative mb-10">
+        <div class="timeline-dot-done absolute -left-8 top-1.5 w-4 h-4 rounded-full"></div>
+        <div class="bg-navy-light border border-white/10 rounded-xl p-6">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-green-400">Complete</span>
+            <span class="text-xs text-white/50">November 2025</span>
+          </div>
+          <h3 class="text-xl font-black mb-1">Large-Scale Fire Trials — Weeze, Germany</h3>
+          <p class="text-white/60 text-sm">Documented sub-20-second knockdown and PFAS-free performance across Class A, B, and lithium-ion scenarios.</p>
+        </div>
+      </div>
+
+      <div class="relative mb-10">
+        <div class="timeline-dot-done absolute -left-8 top-1.5 w-4 h-4 rounded-full"></div>
+        <div class="bg-navy-light border border-white/10 rounded-xl p-6">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-green-400">Complete</span>
+            <span class="text-xs text-white/50">December 2025</span>
+          </div>
+          <h3 class="text-xl font-black mb-1">ISO 9001 &amp; First U.S. Show Trials</h3>
+          <p class="text-white/60 text-sm">Quality-system certification and initial U.S. demonstration burns completed with regional fire service observers.</p>
+        </div>
+      </div>
+
+      <div class="relative mb-10">
+        <div class="timeline-dot-active absolute -left-8 top-1.5 w-4 h-4 rounded-full"></div>
+        <div class="bg-navy-light border border-ember/30 rounded-xl p-6">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-ember">In Progress</span>
+            <span class="text-xs text-white/50">2026</span>
+          </div>
+          <h3 class="text-xl font-black mb-1">UL Test Protocol &amp; NFPA Alignment</h3>
+          <p class="text-white/60 text-sm">Active submission, laboratory testing, and documentation review underway with Underwriters Laboratories.</p>
+        </div>
+      </div>
+
+      <div class="relative mb-10">
+        <div class="timeline-dot-future absolute -left-8 top-1.5 w-4 h-4 rounded-full"></div>
+        <div class="bg-navy-light border border-white/5 rounded-xl p-6 opacity-80">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-white/40">Upcoming</span>
+            <span class="text-xs text-white/50">Q4 2026</span>
+          </div>
+          <h3 class="text-xl font-black mb-1">Final Validation Burns</h3>
+          <p class="text-white/60 text-sm">Closing UL witness tests and third-party verification ahead of formal listing.</p>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="timeline-dot-future absolute -left-8 top-1.5 w-4 h-4 rounded-full"></div>
+        <div class="bg-gradient-to-br from-ember/10 to-navy-light border border-ember/40 rounded-xl p-6">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-ember">Target</span>
+            <span class="text-xs text-white/60">January 1, 2027</span>
+          </div>
+          <h3 class="text-2xl font-black mb-1">UL Certification Complete</h3>
+          <p class="text-white/70 text-sm">HyperX 1 formally UL-listed for full U.S. deployment across municipal, industrial, aviation, and energy sectors.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EARLY ADOPTER CTA -->
+<section class="py-20 bg-navy border-t border-white/5">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="text-ember font-bold uppercase tracking-wider text-sm mb-3">Pre-Certification Program</div>
+    <h2 class="text-3xl lg:text-4xl font-black mb-4">Lock In Pricing. Reserve Priority Supply.</h2>
+    <p class="text-lg text-white/70 mb-8 max-w-2xl mx-auto">Early-adopter partners receive guaranteed bulk pricing, priority delivery on certification day, and transition planning support at no charge. Limited to qualifying U.S. operators.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="contact.html" class="bg-ember hover:bg-ember-dark text-white px-8 py-4 rounded-lg font-semibold transition shadow-lg shadow-ember/30">Apply for Early Adopter</a>
+      <a href="why-hyperx1.html" class="border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition">FAQ</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="bg-navy-dark border-y border-white/5 py-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center text-white/40 text-xs uppercase tracking-widest font-semibold mb-6">Certified & Compliant</div>
+    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-white/70 font-bold text-sm">
+      <span>ICAO</span><span class="text-white/20">·</span>
+      <span>LastFire</span><span class="text-white/20">·</span>
+      <span>EN 3</span><span class="text-white/20">·</span>
+      <span>EN 1568</span><span class="text-white/20">·</span>
+      <span>REACH</span><span class="text-white/20">·</span>
+      <span>WGK 1</span><span class="text-white/20">·</span>
+      <span class="text-ember">PFAS-FREE</span>
+    </div>
+    <div class="text-center text-white/50 text-sm mt-6">Distributed in North America by <span class="text-white font-semibold">Fire Scientific LLC</span></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy-dark text-white/60 py-12 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <img src="logo.png" alt="Fire Scientific" class="h-20 w-auto">
+        </div>
+        <p class="text-sm max-w-md">North American distributor of HyperX 1 — the next-generation, PFAS-free fire extinguishing agent engineered for modern fire risks.</p>
+      </div>
+      <div>
+        <div class="text-white font-bold text-sm uppercase tracking-wider mb-4">Product</div>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html#product" class="hover:text-ember">HyperX 1</a></li>
+          <li><a href="performance.html" class="hover:text-ember">Performance</a></li>
+          <li><a href="specifications.html" class="hover:text-ember">Specifications</a></li>
+          <li><a href="compliance.html" class="hover:text-ember">Compliance</a></li>
+          <li><a href="availability.html" class="hover:text-ember">Availability</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-white font-bold text-sm uppercase tracking-wider mb-4">Company</div>
+        <ul class="space-y-2 text-sm">
+          <li><a href="team.html" class="hover:text-ember">Team</a></li>
+          <li><a href="contact.html" class="hover:text-ember">Contact</a></li>
+          <li><a href="mailto:info@firescientific.com" class="hover:text-ember">info@firescientific.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs">
+      <div>© 2026 Fire Scientific LLC. All rights reserved.</div>
+      <div>HyperX 1 is manufactured in Germany. Distributed in North America by Fire Scientific LLC.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var target = new Date('2027-01-01T00:00:00').getTime();
+    var start  = new Date('2025-10-01T00:00:00').getTime();
+    var totalSpan = target - start;
+
+    var d = document.getElementById('cd-days');
+    var h = document.getElementById('cd-hours');
+    var m = document.getElementById('cd-mins');
+    var s = document.getElementById('cd-secs');
+    var fill = document.getElementById('cd-progress-fill');
+    var label = document.getElementById('cd-progress-label');
+    var done = document.getElementById('cd-complete');
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function tick() {
+      var now = Date.now();
+      var diff = target - now;
+      if (diff <= 0) {
+        d.textContent = '0'; h.textContent = '00'; m.textContent = '00'; s.textContent = '00';
+        fill.style.width = '100%';
+        label.textContent = '100% Complete';
+        done.classList.remove('hidden');
+        return;
+      }
+      var days = Math.floor(diff / (1000*60*60*24));
+      var hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      var mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+      var secs = Math.floor((diff % (1000*60)) / 1000);
+      d.textContent = days.toLocaleString();
+      h.textContent = pad(hours);
+      m.textContent = pad(mins);
+      s.textContent = pad(secs);
+
+      var elapsed = now - start;
+      var pct = Math.max(0, Math.min(100, (elapsed / totalSpan) * 100));
+      fill.style.width = pct.toFixed(1) + '%';
+      label.textContent = pct.toFixed(1) + '% Complete';
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+
+</body>
+</html>

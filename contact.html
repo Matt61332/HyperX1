@@ -21,20 +21,19 @@
 
 <!-- NAV -->
 <nav class="fixed top-0 w-full z-50 bg-navy/95 backdrop-blur-sm border-b border-navy-light">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+  <div class="mx-auto px-8 lg:px-12 py-4 flex items-center justify-between gap-8">
     <a href="index.html" class="flex items-center gap-2">
       <img src="logo.png" alt="Fire Scientific" class="h-20 w-auto">
     </a>
-    <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/80">
-      <a href="index.html#product" class="hover:text-ember transition">Product</a>
-      <a href="index.html#applications" class="hover:text-ember transition">Applications</a>
+    <div class="hidden lg:flex items-center gap-10 text-xl font-medium text-white/80">
+      <a href="index.html#top" class="hover:text-ember transition">Product</a>
       <a href="performance.html" class="hover:text-ember transition">Performance</a>
       <a href="specifications.html" class="hover:text-ember transition">Specs</a>
       <a href="safety.html" class="hover:text-ember transition">Safety</a>
       <a href="compliance.html" class="hover:text-ember transition">Compliance</a>
-      <a href="contact.html" class="text-ember transition">Contact</a>
+      <a href="why-hyperx1.html" class="hover:text-ember transition">FAQ</a>
     </div>
-    <a href="contact.html" class="bg-ember hover:bg-ember-dark text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition">Request Info</a>
+    <a href="contact.html" class="bg-ember hover:bg-ember-dark text-white px-5 py-2.5 rounded-lg font-semibold text-xl transition">Request Info</a>
   </div>
 </nav>
 
@@ -46,27 +45,27 @@
       <h1 class="text-4xl lg:text-5xl font-black mb-4">Request HyperX 1 Information</h1>
       <p class="text-white/70 text-lg">Datasheet, SDS, pricing, and technical consultation — we respond within one business day.</p>
     </div>
-    <form class="bg-navy-light/50 backdrop-blur border border-white/10 rounded-2xl p-8 lg:p-10 grid md:grid-cols-2 gap-5" onsubmit="event.preventDefault(); window.location.href='mailto:info@firescientific.com?subject=HyperX 1 Inquiry';">
+    <form id="request-form" action="https://api.web3forms.com/submit" method="POST" class="bg-navy-light/50 backdrop-blur border border-white/10 rounded-2xl p-8 lg:p-10 grid md:grid-cols-2 gap-5">
+      <input type="hidden" name="access_key" value="e3d8fb49-71c5-422d-b852-d15bcb913b7d" />
+      <input type="hidden" name="subject" value="HyperX 1 Inquiry — Fire Scientific website" />
+      <input type="hidden" name="from_name" value="Fire Scientific website" />
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
       <div>
         <label class="block text-sm font-semibold text-white/80 mb-2">Full Name *</label>
-        <input type="text" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Jane Doe" />
+        <input type="text" name="name" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Jane Doe" />
       </div>
       <div>
         <label class="block text-sm font-semibold text-white/80 mb-2">Company *</label>
-        <input type="text" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Acme Fire Services" />
+        <input type="text" name="company" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Acme Fire Services" />
       </div>
-      <div>
+      <div class="md:col-span-2">
         <label class="block text-sm font-semibold text-white/80 mb-2">Email *</label>
-        <input type="email" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="jane@example.com" />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold text-white/80 mb-2">Country *</label>
-        <input type="text" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="United States" />
+        <input type="email" name="email" required class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="jane@example.com" />
       </div>
       <div class="md:col-span-2">
         <label class="block text-sm font-semibold text-white/80 mb-2">Application / Use Case</label>
-        <select class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:border-ember focus:outline-none">
-          <option>Select an application…</option>
+        <select name="application" class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:border-ember focus:outline-none">
+          <option value="">Select an application…</option>
           <option>Lithium-ion battery / EV</option>
           <option>Class A — Solids</option>
           <option>Class B — Liquids</option>
@@ -79,13 +78,53 @@
       </div>
       <div class="md:col-span-2">
         <label class="block text-sm font-semibold text-white/80 mb-2">Message</label>
-        <textarea rows="4" class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Tell us about your project, volume needs, or questions…"></textarea>
+        <textarea name="message" rows="4" class="w-full bg-navy-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:border-ember focus:outline-none" placeholder="Tell us about your project, volume needs, or questions…"></textarea>
       </div>
       <div class="md:col-span-2">
-        <button type="submit" class="w-full bg-ember hover:bg-ember-dark text-white font-bold py-4 rounded-lg transition shadow-lg shadow-ember/30">Submit Request</button>
-        <p class="text-xs text-white/40 text-center mt-4">By submitting, you agree to be contacted by Fire Scientific regarding your inquiry.</p>
+        <button id="request-submit" type="submit" class="w-full bg-ember hover:bg-ember-dark disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg transition shadow-lg shadow-ember/30">Submit Request</button>
+        <p id="request-status" class="text-xs text-white/40 text-center mt-4">By submitting, you agree to be contacted by Fire Scientific regarding your inquiry.</p>
       </div>
     </form>
+
+    <script>
+      (function () {
+        var form = document.getElementById('request-form');
+        var btn = document.getElementById('request-submit');
+        var status = document.getElementById('request-status');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          btn.disabled = true;
+          btn.textContent = 'Sending…';
+          status.className = 'text-xs text-white/60 text-center mt-4';
+          status.textContent = 'Sending your request…';
+          fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          }).then(function (res) {
+            return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+          }).then(function (result) {
+            if (result.ok) {
+              form.reset();
+              btn.textContent = 'Request Sent ✓';
+              status.className = 'text-sm text-ember text-center mt-4 font-semibold';
+              status.textContent = 'Thanks — we received your request and will respond within one business day.';
+            } else {
+              btn.disabled = false;
+              btn.textContent = 'Submit Request';
+              status.className = 'text-sm text-red-400 text-center mt-4';
+              status.textContent = (result.data && result.data.message) ? result.data.message : 'Something went wrong. Please email info@firescientific.com directly.';
+            }
+          }).catch(function () {
+            btn.disabled = false;
+            btn.textContent = 'Submit Request';
+            status.className = 'text-sm text-red-400 text-center mt-4';
+            status.textContent = 'Network error. Please email info@firescientific.com directly.';
+          });
+        });
+      })();
+    </script>
   </div>
 </section>
 
